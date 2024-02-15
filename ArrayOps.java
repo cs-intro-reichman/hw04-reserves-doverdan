@@ -1,11 +1,14 @@
 public class ArrayOps {
     public static void main(String[] args) {
-        int[] arr1 = { 1, 2, 3, -2, 5 };
-        int[] arr2 = { -4, 2, 2, 2, 2, 2, 3, 4, 4, 5 };
-        int[] arr3 = { 5, 4, 3, 2, 1 };
-        System.out.println(isSorted(arr1));
-        System.out.println(isSorted(arr2));
-        System.out.println(isSorted(arr3));
+        // int[] arr1 = { 1, 2, 3, -2, 5 };
+        // int[] arr2 = { -4, 2, 2, 2, 2, 2, 3, 4, 4, 5 };
+        // int[] arr3 = { 5, 4, 3, 2, 1 };
+        // System.out.println(isSorted(arr1));
+        // System.out.println(isSorted(arr2));
+        // System.out.println(isSorted(arr3));
+        int[] arr1 = { 1, 2, 3, 4, 5 };
+        int res = findMissingInt(arr1);
+        System.out.println(res);
     }
 
     public static String toString(int[] array) {
@@ -30,12 +33,13 @@ public class ArrayOps {
     }
 
     public static int findMissingInt(int[] array) {
+        int miss = 0;
         for (int i = 0; i <= array.length; i++) {
             if (!contains(array, i)) {
-                return i;
+                miss = i;
             }
         }
-        return -1;
+        return miss;
     }
 
     public static int maxValue(int[] array) {
