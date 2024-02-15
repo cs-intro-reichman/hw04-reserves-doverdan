@@ -47,8 +47,6 @@ public class StringOps {
         return nstring;
     }
 
-    // write a function that takes a string, turns the first word to lowercase, and
-    // the first letter of each word after that to uppercase. delete all spaces.
     public static String camelCase(String string) {
         String result = "";
         boolean nextCharUpper = false;
@@ -79,15 +77,33 @@ public class StringOps {
             }
         }
 
-        if (!result.isEmpty() && result.charAt(0) >= 'A' && result.charAt(0) <= 'Z') {
+        if (result.length() != 0 && result.charAt(0) >= 'A' && result.charAt(0) <= 'Z') {
             result = (char) (result.charAt(0) + 32) + result.substring(1);
         }
 
         return result;
     }
 
+    // This function receives two parameters: A string and a character. The function
+    // returns an array
+    // containing all the indexes in which the character appears in the string
+    // Assume that the given string is not empty, and that the given character
+    // appears in the string at least once.
     public static int[] allIndexOf(String string, char chr) {
-        // Write your code here:
-        return new int[1];
+        int count = 0;
+        for (int i = 0; i < string.length(); i++) {
+            if (string.charAt(i) == chr) {
+                count++;
+            }
+        }
+        int[] indexes = new int[count];
+        for (int i = 0, j = 0; i < string.length(); i++) {
+            if (string.charAt(i) == chr) {
+                indexes[j] = i;
+                j++;
+            }
+        }
+
+        return indexes;
     }
 }
