@@ -6,8 +6,8 @@ public class ArrayOps {
         // System.out.println(isSorted(arr1));
         // System.out.println(isSorted(arr2));
         // System.out.println(isSorted(arr3));
-        int res = findMissingInt(new int[] { 2, 3, 1 });
-        System.out.println(res);
+        int[] arr1 = { 3, 2, 1 };
+        System.out.println(isSorted(arr1));
     }
 
     public static String toString(int[] array) {
@@ -123,7 +123,7 @@ public class ArrayOps {
     }
 
     public static boolean isSorted(int[] array) {
-        // Write your code here:
+
         Boolean up = true;
         Boolean down = true;
         for (int i = 0; i < array.length - 1; i++) {
