@@ -6,8 +6,8 @@ public class ArrayOps {
         // System.out.println(isSorted(arr1));
         // System.out.println(isSorted(arr2));
         // System.out.println(isSorted(arr3));
-        int[] arr1 = { 1, 2, 3, 4, 5 };
-        int res = findMissingInt(arr1);
+        int[] arr1 = { 2, 8, 3, 7, 8 };
+        int res = secondMaxValue(arr1);
         System.out.println(res);
     }
 
@@ -33,7 +33,7 @@ public class ArrayOps {
     }
 
     public static int findMissingInt(int[] array) {
-        int miss = 0;
+        int miss = -1;
         for (int i = 0; i <= array.length; i++) {
             if (!contains(array, i)) {
                 miss = i;
@@ -65,9 +65,12 @@ public class ArrayOps {
     public static int secondMaxValue(int[] array) {
         int max = maxValue(array);
         int min = minValue(array);
+        Boolean b = false;
         for (int i = 0; i < array.length; i++) {
-            if (array[i] == max)
+            if ((array[i] == max) && (!b)) {
                 array[i] = min;
+                b = true;
+            }
         }
         return maxValue(array);
     }
