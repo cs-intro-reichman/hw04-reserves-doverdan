@@ -30,7 +30,7 @@ public class ArrayOps {
     }
 
     public static int findMissingInt(int[] array) {
-        for (int i = 1; i <= array.length; i++) {
+        for (int i = 0; i <= array.length; i++) {
             if (!contains(array, i)) {
                 return i;
             }
