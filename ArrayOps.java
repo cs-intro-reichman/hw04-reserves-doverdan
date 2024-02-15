@@ -6,8 +6,9 @@ public class ArrayOps {
         // System.out.println(isSorted(arr1));
         // System.out.println(isSorted(arr2));
         // System.out.println(isSorted(arr3));
-        int[] arr1 = { 3, 2, 1 };
-        System.out.println(isSorted(arr1));
+        int[] arr1 = { 2, 2, 3, 7, 8, 3, 2 };
+        int[] arr2 = { 8, 2, 7, 7, 3 };
+        System.out.println(containsTheSameElements(arr1, arr2));
     }
 
     public static String toString(int[] array) {
@@ -32,13 +33,12 @@ public class ArrayOps {
     }
 
     public static int findMissingInt(int[] array) {
-        int miss = -1;
         for (int i = 0; i <= array.length; i++) {
             if (!contains(array, i)) {
                 return i;
             }
         }
-        return miss;
+        return 0;
     }
 
     public static int maxValue(int[] array) {
